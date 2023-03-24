@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/7b798ba6f3.js" crossorigin="anonymous"></script>
+    <title>Weather App</title>
+</head>
+
+<body id="body" class="img-fluid" style="background-color: #8E87FA; color: #ffffff; opacity:0;">
+
+    <nav class="navbar text-white">
+        <div class="container-fluid">
+          <a class="navbar-brand fw-bold fs-3 text-light">Weather App</a>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" id="city" placeholder="Enter City" aria-label="Search">
+            <button class="btn btn-outline-success text-bg-success" type="submit" id="submit">Search</button>
+          </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 mt-5 justify-content-center text-center">
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border-0" style="background-color: #6D67D0;">
+                  <div class="card-header py-3 border-0">
+                        <h4 class="my-0 fw-normal">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span id="cityName"></span>
+                        </h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title text-white"><span id="temp"></span>
+                        <span><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-temperature-celsius" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"/> <circle cx="6" cy="8" r="2" /> <path d="M20 9a3 3 0 0 0 -3 -3h-1a3 3 0 0 0 -3 3v6a3 3 0 0 0 3 3h1a3 3 0 0 0 3 -3" /></svg></span>
+                    </h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Feels Like : <span id="feels_like"></span>
+                            <span><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-temperature-celsius" width="18" height="18" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"/> <circle cx="6" cy="8" r="2" /> <path d="M20 9a3 3 0 0 0 -3 -3h-1a3 3 0 0 0 -3 3v6a3 3 0 0 0 3 3h1a3 3 0 0 0 3 -3" /></svg></span>
+                        </li>
+                        <li>Min Temperature : <span id="min_temp"></span>
+                            <span><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-temperature-celsius" width="18" height="18" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"/> <circle cx="6" cy="8" r="2" /> <path d="M20 9a3 3 0 0 0 -3 -3h-1a3 3 0 0 0 -3 3v6a3 3 0 0 0 3 3h1a3 3 0 0 0 3 -3" /></svg></span>
+                        </li>
+                        <li>Max Temperature : <span id="max_temp"></span>
+                            <span><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-temperature-celsius" width="18" height="18" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"/> <circle cx="6" cy="8" r="2" /> <path d="M20 9a3 3 0 0 0 -3 -3h-1a3 3 0 0 0 -3 3v6a3 3 0 0 0 3 3h1a3 3 0 0 0 3 -3" /></svg></span>
+                        </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <h2 class="display-6 text-center mb-4 fw-bold fs-4 text-dark">More Details</h2>
+        
+            <div class="table-responsive">
+              <table class="table text-center">
+                <thead>
+                  <tr>
+                    <th>Cloud PCT</th>
+                    <th>Humidity</th>
+                    <th>Sunrise</th>
+                    <th>Sunset</th>
+                    <th>Wind Speed</th>
+                    <th>Wind Degrees</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span id="cloud_pct"></span></td>
+                    <td><span id="humidity"></span> %</td>
+                    <td><span id="sunrise"></span></td>
+                    <td><span id="sunset"></span></td>
+                    <td><span id="wind_speed"></span> m/s</td>
+                    <td><span id="wind_degrees"></span>&#176;</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script type="text/javascript">
+        window.onload = fadeIn;
+          
+        function fadeIn() {
+            var fade = document.getElementById("body");
+            var opacity = 0;
+            var intervalID = setInterval(function() {
+          
+                if (opacity < 1) {
+                    opacity = opacity + 0.1
+                    fade.style.opacity = opacity;
+                } else {
+                    clearInterval(intervalID);
+                }
+            }, 200);
+        }
+    </script>
+</body>
+</html>
